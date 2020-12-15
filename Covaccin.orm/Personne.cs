@@ -1,26 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Covaccin.orm
 {
     public class Personne
     {
-        int id { get; set; }
+        int Id { get; set; }
 
         [MaxLength(20)]
-        string nom { get; set; }
+        [Required]
+        string Nom { get; set; }
 
         [MaxLength(20)]
-        string prenom { get; set; }
+        string Prenom { get; set; }
 
-        bool sexe { get; set; }
+        bool Sexe { get; set; }
 
-        DateTime? dateNaissance { get; set; }
+        DateTime? DateNaissance { get; set; }
 
-        bool estResident_pasPersonnel { get; set; }
+        [Required]
+        bool EstResident_pasPersonnel { get; set; }
 
-        public Personne()
-        {
-        }
+        public List<Injection> Injections { get; set; } = new List<Injection>();
     }
 }
