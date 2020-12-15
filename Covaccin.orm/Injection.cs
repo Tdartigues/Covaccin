@@ -5,13 +5,13 @@ namespace Covaccin.orm
 {
     public class Injection
     {
-        int Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        int IdPersonne { get; set; }
+        public int IdPersonne { get; set; }
 
         [Required]
-        int IdType { get; set; }
+        public int IdType { get; set; }
 
         [MaxLength(20)]
         public string Prenom { get; set; }
@@ -21,8 +21,8 @@ namespace Covaccin.orm
 
         public int IdLot { get; set; }
 
-        public Personne personne { get; set; }
+        public Personne Personne { get; set; }
 
-        public Type type { get; set; }
+        public TypeVaccin TypeVaccin { get; set; }
     }
 }
