@@ -10,6 +10,9 @@ namespace Covaccin.orm
 
         public int id { get; set; }
 
+        [MaxLength(20)]
         public string typeVaccin { get; set; }
+
+        public List<Injection> Injections {get;set;} = new List<Injection> ();
     }
 }
