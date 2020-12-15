@@ -8,7 +8,7 @@ namespace Covaccin.orm
     public class TypeVaccin
     {
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [MaxLength(20)]
         public string typeVaccin { get; set; }
