@@ -9,14 +9,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Covaccin.orm.Migrations
 {
     [DbContext(typeof(Contexte))]
-    [Migration("20201215163950_Initialisation")]
-    partial class Initialisation
+    [Migration("20210214161025_Init2")]
+    partial class Init2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "5.0.1");
+                .HasAnnotation("ProductVersion", "5.0.2");
 
             modelBuilder.Entity("Covaccin.orm.Injection", b =>
                 {
@@ -91,7 +91,7 @@ namespace Covaccin.orm.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Type")
+                    b.Property<string>("Vaccin")
                         .HasMaxLength(20)
                         .HasColumnType("TEXT");
 
@@ -107,7 +107,7 @@ namespace Covaccin.orm.Migrations
                         .HasForeignKey("PersonneId");
 
                     b.HasOne("Covaccin.orm.TypeVaccin", "TypeVaccin")
-                        .WithMany()
+                        .WithMany("Injections")
                         .HasForeignKey("TypeVaccinId");
 
                     b.Navigation("Personne");
@@ -116,6 +116,11 @@ namespace Covaccin.orm.Migrations
                 });
 
             modelBuilder.Entity("Covaccin.orm.Personne", b =>
+                {
+                    b.Navigation("Injections");
+                });
+
+            modelBuilder.Entity("Covaccin.orm.TypeVaccin", b =>
                 {
                     b.Navigation("Injections");
                 });

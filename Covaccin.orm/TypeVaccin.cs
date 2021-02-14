@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel.DataAnnotations;
 
 namespace Covaccin.orm
@@ -11,7 +10,7 @@ namespace Covaccin.orm
         public int Id { get; set; }
 
         [MaxLength(20)]
-        public string typeVaccin { get; set; }
+        public string Vaccin { get; set; }
 
         public List<Injection> Injections {get;set;} = new List<Injection> ();
     }

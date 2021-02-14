@@ -14,7 +14,6 @@ namespace Covaccin.orm
         protected override void OnConfiguring(DbContextOptionsBuilder option)
         {
             option.UseSqlite("Data Source = covaccin.db");
-            base.OnConfiguring(option);
         }
     }
 }
